@@ -1,6 +1,7 @@
 
 import React, { useState, useEffect } from 'react';
-import { fetchGasometros, Gasometro } from '../data/mockApi';
+import { fetchGasometros } from '../data/mockApi';
+import type { Gasometro } from '../data/mockApi';
 
 const GasometrosListPage = () => {
   const [gasometros, setGasometros] = useState<Gasometro[]>([]);
