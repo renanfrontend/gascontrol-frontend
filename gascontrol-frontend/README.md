@@ -1,73 +1,93 @@
-# React + TypeScript + Vite
+# GasControl - Frontend
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+> **Status do Projeto:** A interface do usuário (UI) para os principais recursos foi construída e está funcionando com dados mockados (simulados). A próxima fase é a integração com a API do backend.
 
-Currently, two official plugins are available:
+Este é o repositório do frontend para o sistema GasControl, desenvolvido como um SPA (Single-Page Application) utilizando React, Vite e TypeScript.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+![Login](./login.png)
+![Dashboards](./dashboards.png)
+![Gasômetros](./gasometros.png)
+![Alertas](./alertas.png)
 
-## React Compiler
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## ✨ Funcionalidades (UI Implementada)
 
-## Expanding the ESLint configuration
+Esta é a lista de funcionalidades exigidas, com o status atual de implementação da interface.
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+-   **Autenticação**
+    -   [x] Tela de Login
+    -   [ ] Persistência de sessão e proteção de rotas (lógica pendente)
+-   **Dashboard**
+    -   [x] Cards/resumos para KPIs (total de gasômetros, alertas ativos, etc)
+    -   [x] Espaço reservado para Gráfico de consumo
+-   **Gasômetros (CRUD)**
+    -   [x] Lista paginada
+    -   [ ] Formulários de Criar/Editar/Deletar (UI e lógica pendentes)
+-   **Leituras**
+    -   [ ] Formulário de Registro de Leitura (UI e lógica pendentes)
+    -   [ ] Tabela de Histórico de leituras (UI e lógica pendentes)
+-   **Alertas**
+    -   [x] Lista de alertas com status
+    -   [ ] Lógica para mudança de status (pendente)
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+## 🛠️ Tecnologias Utilizadas
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+-   **Framework:** React (com Vite)
+-   **Linguagem:** TypeScript
+-   **Estilização:** Tailwind CSS & shadcn/ui
+-   **Roteamento:** React Router DOM
+-   **Gerenciamento de Estado:** Zustand
+-   **Formulários:** React Hook Form & Zod (a ser implementado)
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+## 🚀 Como Executar o Projeto
+
+Siga os passos abaixo para rodar a aplicação frontend em modo de desenvolvimento.
+
+### Pré-requisitos
+-   Node.js (v18 ou superior)
+-   Git
+
+### Passos de Execução
+
+1.  **Clone o repositório:**
+    ```bash
+    git clone [https://github.com/renanfrontend/gascontrol-frontend.git](https://github.com/renanfrontend/gascontrol-frontend.git)
+    cd gascontrol-frontend
+    ```
+
+2.  **Crie o arquivo de ambiente:**
+    Copie o arquivo de exemplo `.env.example` para `.env`. Este arquivo será usado futuramente para a integração com a API.
+    ```bash
+    cp .env.example .env
+    ```
+
+3.  **Instale as dependências:**
+    ```bash
+    npm install
+    ```
+
+4.  **Execute a aplicação:**
+    ```bash
+    npm run dev
+    ```
+    A aplicação estará disponível em `http://localhost:5173`.
+
+### Variáveis de Ambiente
+
+Crie um arquivo `.env.example` na raiz do projeto com o seguinte conteúdo:
+
+```env
+VITE_API_BASE_URL=http://localhost:8000/api
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## 📜 Scripts Disponíveis
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+-   `npm run dev`: Inicia o servidor de desenvolvimento.
+-   `npm run build`: Compila o projeto para produção.
+-   `npm run lint`: Executa o linter para análise de código.
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+## 📝 Licença
+
+Este projeto é licenciado sob a Licença MIT.
+
+Copyright (c) 2025 Renan Augusto dos Santos.
