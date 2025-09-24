@@ -5,7 +5,7 @@
 Este é o repositório do frontend para o sistema GasControl, desenvolvido como um SPA (Single-Page Application) utilizando React, Vite e TypeScript.
 
 ![Login](./login.png)
-![Dashboards](./dashboards.png)
+![Dashboards](./dashboard.png)
 ![Gasômetros](./gasometros.png)
 ![Alertas](./alertas.png)
 

@@ -2,7 +2,7 @@ import { NavLink } from "react-router-dom";
 import { LayoutDashboard, BarChart3, ListChecks } from "lucide-react";
 
 const navLinks = [
-  { to: "/", label: "Dashboard", icon: LayoutDashboard },
+  { to: "/dashboard", label: "Dashboard", icon: LayoutDashboard },
   { to: "/gasometros", label: "Gasômetros", icon: BarChart3 },
   { to: "/alertas", label: "Alertas", icon: ListChecks },
 ];

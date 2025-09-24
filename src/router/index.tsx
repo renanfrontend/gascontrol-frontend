@@ -1,25 +1,25 @@
-import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import { createBrowserRouter, RouterProvider, Navigate } from 'react-router-dom';
 import { AuthProvider } from '~/contexts/AuthContext';
 import { AppLayout } from '~/components/layout/AppLayout';
-import { ProtectedRoute } from './ProtectedRoute'; // Importe a rota protegida
+import { ProtectedRoute } from './ProtectedRoute';
 import GasometrosListPage from '~/pages/GasometrosListPage';
 import DashboardPage from '~/pages/DashboardPage';
 import LoginPage from '~/pages/LoginPage';
 import AlertasListPage from '~/pages/AlertasListPage';
 
 const router = createBrowserRouter([
-  // Rota pública
   { path: '/login', element: <LoginPage /> },
-
-  // Rotas protegidas
   {
     path: '/',
-    element: <ProtectedRoute />, // O portão de entrada
+    element: <ProtectedRoute />,
     children: [
       {
-        element: <AppLayout />, // O layout que contém as páginas
+        element: <AppLayout />,
         children: [
-          { index: true, element: <DashboardPage /> },
+          // 1. Redireciona a rota raiz '/' para '/dashboard'
+          { index: true, element: <Navigate to="/dashboard" replace /> },
+          // 2. Define a rota explícita para o dashboard
+          { path: 'dashboard', element: <DashboardPage /> },
           { path: 'gasometros', element: <GasometrosListPage /> },
           { path: 'alertas', element: <AlertasListPage /> },
         ],

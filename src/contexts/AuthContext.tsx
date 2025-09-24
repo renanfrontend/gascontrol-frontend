@@ -1,5 +1,4 @@
 import { createContext, useState, useContext, ReactNode, useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
 
 interface AuthContextType {
   isAuthenticated: boolean;
@@ -11,10 +10,8 @@ const AuthContext = createContext<AuthContextType | undefined>(undefined);
 
 export const AuthProvider = ({ children }: { children: ReactNode }) => {
   const [isAuthenticated, setIsAuthenticated] = useState<boolean>(false);
-  const navigate = useNavigate();
 
   useEffect(() => {
-    // Verifica se existe um token ao carregar a aplicação
     const token = localStorage.getItem('authToken');
     if (token) {
       setIsAuthenticated(true);
@@ -22,22 +19,17 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
   }, []);
 
   const login = async (data: any) => {
-    // Lógica de login: por enquanto, qualquer usuário/senha é válido
     console.log('Login data:', data);
-
-    // Simula a criação de um token e o armazena
     const fakeToken = '123456abcdef';
     localStorage.setItem('authToken', fakeToken);
     setIsAuthenticated(true);
-
-    // Redireciona para o dashboard após o login
-    navigate('/');
+    // Não vamos mais navegar aqui
   };
 
   const logout = () => {
     localStorage.removeItem('authToken');
     setIsAuthenticated(false);
-    navigate('/login');
+    // Também não vamos navegar aqui
   };
 
   return (
