@@ -1,4 +1,5 @@
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import { AuthProvider } from '~/contexts/AuthContext';
 import { AppLayout } from '~/components/layout/AppLayout';
 import GasometrosListPage from '~/pages/GasometrosListPage';
 import DashboardPage from '~/pages/DashboardPage';
@@ -18,4 +19,7 @@ const router = createBrowserRouter([
   },
 ]);
 
-export const AppRouter = () => <RouterProvider router={router} />;
+export const AppRouter = () => 
+<AuthProvider>
+<RouterProvider router={router} />;
+</AuthProvider>
