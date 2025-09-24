@@ -90,4 +90,4 @@ VITE_API_BASE_URL=http://localhost:8000/api
 
 Este projeto é licenciado sob a Licença MIT.
 
-Copyright (c) 2025 Renan Augusto dos Santos.
+Copyright (c) 2025 Desenvolvido por - Renan Augusto dos Santos.
