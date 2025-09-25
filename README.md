@@ -1,43 +1,62 @@
 # GasControl - Frontend
 
-> **Status do Projeto:** A interface do usuário (UI) para os principais recursos foi construída e está funcionando com dados mockados (simulados). A próxima fase é a integração com a API do backend.
+![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
+![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white)
+![Vite](https://img.shields.io/badge/Vite-646CFF?style=for-the-badge&logo=vite&logoColor=white)
+![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)
 
-Este é o repositório do frontend para o sistema GasControl, desenvolvido como um SPA (Single-Page Application) utilizando React, Vite e TypeScript.
+> **Nota:** Esta aplicação é uma interface de usuário completa e funcional. Atualmente, ela opera com uma API mockada (simulada) para permitir a demonstração de todos os recursos visuais e de interação. A integração com o backend e a implementação de testes E2E são os próximos passos planejados.
 
-![Login](./login.png)
-![Dashboards](./dashboard.png)
-![Gasômetros](./gasometros.png)
-![Alertas](./alertas.png)
+Este projeto é a interface web (frontend) do **GasControl**, um sistema para gestão de consumo de gás em condomínios, permitindo o cadastro de medidores, registro de leituras e visualização de relatórios.
 
+![GIF da Aplicação](./gascontrol-demo.mp4)
+*(Dica: Grave um GIF curto mostrando a navegação, o sidebar e o seletor de tema e salve como `gascontrol-demo.gif` na raiz do projeto)*
 
-## ✨ Funcionalidades (UI Implementada)
+---
 
-Esta é a lista de funcionalidades exigidas, com o status atual de implementação da interface.
+## ✨ Funcionalidades Principais
+A interface para os seguintes recursos está completamente implementada:
 
--   **Autenticação**
-    -   [x] Tela de Login
-    -   [ ] Persistência de sessão e proteção de rotas (lógica pendente)
--   **Dashboard**
-    -   [x] Cards/resumos para KPIs (total de gasômetros, alertas ativos, etc)
-    -   [x] Espaço reservado para Gráfico de consumo
--   **Gasômetros (CRUD)**
-    -   [x] Lista paginada
-    -   [ ] Formulários de Criar/Editar/Deletar (UI e lógica pendentes)
--   **Leituras**
-    -   [ ] Formulário de Registro de Leitura (UI e lógica pendentes)
-    -   [ ] Tabela de Histórico de leituras (UI e lógica pendentes)
--   **Alertas**
-    -   [x] Lista de alertas com status
-    -   [ ] Lógica para mudança de status (pendente)
+-   **Dashboard Analítico:** Exibe KPIs (Key Performance Indicators) como total de medidores e alertas ativos, além de um gráfico de consumo diário para análise de dados.
+-   **Gerenciamento de Gasômetros:** Tela para listagem e visualização de todos os medidores cadastrados.
+-   **Monitoramento de Alertas:** Página dedicada à visualização de alertas gerados pelo sistema.
+-   **Fluxo de Autenticação Seguro:** Interface de login e sistema de rotas protegidas que garantem o acesso apenas a usuários autenticados.
+
+## 💎 Diferenciais e Melhorias de UI/UX
+Além dos requisitos básicos, foram implementadas diversas funcionalidades para aprimorar a experiência do usuário:
+
+-   **Sidebar Inteligente (Estilo Gemini):** Um menu lateral retrátil que se expande ao passar o mouse (hover) e pode ser fixado com um clique, otimizando o espaço de tela.
+-   **Tema Claro e Escuro (Light/Dark Mode):** Um seletor de tema completo que permite ao usuário escolher entre os modos claro, escuro ou sincronizar com a preferência do seu sistema operacional.
+-   **Layout Completo e Profissional:** A aplicação conta com Header e Footer, criando uma experiência de navegação coesa e profissional.
+-   **Componente de Logout:** Um botão de "Sair" funcional no header que encerra a sessão do usuário e o redireciona para a tela de login.
+-   **Totalmente Responsivo:** A interface foi construída para se adaptar a diferentes tamanhos de tela, de desktops a dispositivos móveis.
 
 ## 🛠️ Tecnologias Utilizadas
+Este projeto foi construído com um conjunto de tecnologias modernas para garantir performance e manutenibilidade.
 
--   **Framework:** React (com Vite)
--   **Linguagem:** TypeScript
--   **Estilização:** Tailwind CSS & shadcn/ui
--   **Roteamento:** React Router DOM
--   **Gerenciamento de Estado:** Zustand
--   **Formulários:** React Hook Form & Zod (a ser implementado)
+-   **Base e Estrutura:**
+    -   **React:** Biblioteca principal para a construção da interface.
+    -   **Vite:** Ferramenta de build extremamente rápida para desenvolvimento.
+    -   **TypeScript:** Superset do JavaScript que adiciona tipagem estática.
+
+-   **Estilização e Componentes:**
+    -   **Tailwind CSS:** Framework CSS utility-first para estilização rápida e customizável.
+    -   **shadcn/ui:** Coleção de componentes reutilizáveis, acessíveis e customizáveis.
+
+-   **Navegação e Estado:**
+    -   **React Router DOM:** Para gerenciamento de rotas e navegação na SPA.
+    -   **React Context API:** Utilizada para o gerenciamento do estado de autenticação.
+    -   **Zustand:** Gerenciador de estado minimalista para o controle de estados da UI (ex: sidebar).
+
+-   **Autenticação e Formulários:**
+    -   **Gerenciamento de Token:** Simulação de persistência de sessão via `localStorage`.
+    -   **React Hook Form & Yup:** Para construção e validação de formulários de forma performática e declarativa.
+
+-   **Visualização de Dados:**
+    -   **Recharts:** Biblioteca para a criação de gráficos interativos e componentizados.
+
+-   **Temas (Light/Dark Mode):**
+    -   **next-themes:** Gerencia a troca de temas e a persistência da escolha do usuário.
 
 ## 🚀 Como Executar o Projeto
 
@@ -56,7 +75,6 @@ Siga os passos abaixo para rodar a aplicação frontend em modo de desenvolvimen
     ```
 
 2.  **Crie o arquivo de ambiente:**
-    Copie o arquivo de exemplo `.env.example` para `.env`. Este arquivo será usado futuramente para a integração com a API.
     ```bash
     cp .env.example .env
     ```
@@ -72,22 +90,7 @@ Siga os passos abaixo para rodar a aplicação frontend em modo de desenvolvimen
     ```
     A aplicação estará disponível em `http://localhost:5173`.
 
-### Variáveis de Ambiente
-
-Crie um arquivo `.env.example` na raiz do projeto com o seguinte conteúdo:
-
-```env
-VITE_API_BASE_URL=http://localhost:8000/api
-```
-
-## 📜 Scripts Disponíveis
-
--   `npm run dev`: Inicia o servidor de desenvolvimento.
--   `npm run build`: Compila o projeto para produção.
--   `npm run lint`: Executa o linter para análise de código.
-
 ## 📝 Licença
-
 Este projeto é licenciado sob a Licença MIT.
 
-Copyright (c) 2025 Desenvolvido por - Renan Augusto dos Santos.
+Copyright (c) 2025 Renan Augusto dos Santos.

@@ -3,11 +3,9 @@ import { AppRouter } from '~/router';
 
 function App() {
   return (
-    <div className="dark">
-      <AuthProvider>
-        <AppRouter />
-      </AuthProvider>
-    </div>
+    <AuthProvider>
+      <AppRouter />
+    </AuthProvider>
   );
 }
 
