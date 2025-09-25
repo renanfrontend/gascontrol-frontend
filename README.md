@@ -9,8 +9,11 @@
 
 Este projeto é a interface web (frontend) do **GasControl**, um sistema para gestão de consumo de gás em condomínios, permitindo o cadastro de medidores, registro de leituras e visualização de relatórios.
 
-![GIF da Aplicação](./gascontrol-demo.mp4)
-*(Dica: Grave um GIF curto mostrando a navegação, o sidebar e o seletor de tema e salve como `gascontrol-demo.gif` na raiz do projeto)*
+![Tema Claro](./dashboard-3-sidebar.png)
+![Tema escuro](./dashboard-1-dark.png)
+![Menu lateral](./dasboard-3-sidebar.png)
+![Gráficos](./dashboard-chart.png)
+
 
 ---
 
