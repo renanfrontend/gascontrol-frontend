@@ -8,11 +8,19 @@
 > **Nota:** Esta aplicação é uma interface de usuário completa e funcional. Atualmente, ela opera com uma API mockada (simulada) para permitir a demonstração de todos os recursos visuais e de interação. A integração com o backend e a implementação de testes E2E são os próximos passos planejados.
 
 Este projeto é a interface web (frontend) do **GasControl**, um sistema para gestão de consumo de gás em condomínios, permitindo o cadastro de medidores, registro de leituras e visualização de relatórios.
+![Login](./login.png)
 
 ![Tema Claro](./dashboard-3-sidebar.png)
+
 ![Tema escuro](./dashboard-1-dark.png)
-![Menu lateral](./dasboard-3-sidebar.png)
+
+![Menu lateral](./dashboard-3-sidebar.png)
+
 ![Gráficos](./dashboard-chart.png)
+
+![Gasometros](./gasometros.png)
+
+![Alertas](./alertas.png)
 
 
 ---
