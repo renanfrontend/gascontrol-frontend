@@ -2,6 +2,7 @@ import { Button } from "~/components/ui/button";
 import { Menu, LogOut } from "lucide-react";
 import { useUiStore } from "~/store/uiStore";
 import { useAuth } from "~/contexts/AuthContext";
+import { ThemeToggle } from "./ThemeToggle"; // Importe o seletor
 
 export function Header() {
   const { toggleSidebarPin } = useUiStore();
@@ -13,10 +14,13 @@ export function Header() {
         <Menu className="h-6 w-6" />
       </Button>
 
-      <Button variant="ghost" onClick={logout}>
-        Sair
-        <LogOut className="ml-2 h-4 w-4" />
-      </Button>
+      <div className="flex items-center gap-4">
+        <ThemeToggle /> {/* Adicione o seletor de tema aqui */}
+        <Button variant="ghost" onClick={logout}>
+          Sair
+          <LogOut className="ml-2 h-4 w-4" />
+        </Button>
+      </div>
     </header>
   );
 }
