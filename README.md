@@ -36,7 +36,7 @@ A interface para os seguintes recursos está completamente implementada:
 ## 💎 Diferenciais e Melhorias de UI/UX
 Além dos requisitos básicos, foram implementadas diversas funcionalidades para aprimorar a experiência do usuário:
 
--   **Sidebar Inteligente (Estilo Gemini):** Um menu lateral retrátil que se expande ao passar o mouse (hover) e pode ser fixado com um clique, otimizando o espaço de tela.
+-   **Sidebar Inteligente:** Um menu lateral retrátil que se expande ao passar o mouse (hover) e pode ser fixado com um clique, otimizando o espaço de tela.
 -   **Tema Claro e Escuro (Light/Dark Mode):** Um seletor de tema completo que permite ao usuário escolher entre os modos claro, escuro ou sincronizar com a preferência do seu sistema operacional.
 -   **Layout Completo e Profissional:** A aplicação conta com Header e Footer, criando uma experiência de navegação coesa e profissional.
 -   **Componente de Logout:** Um botão de "Sair" funcional no header que encerra a sessão do usuário e o redireciona para a tela de login.
